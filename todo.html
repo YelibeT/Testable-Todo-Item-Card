@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article data-testid="test-todo-card">
+        <h2 id="todo-title" data-testid="test-todo-title">
+            Build *999#
+        </h2>
+        <p data-testid="test-todo-description">A USSD-based system for managing tasks using mobile phone without internet. </p>
+        <div class="meta">
+            <span data-testid="test-todo-priority" class="priority high" aria-label="high priority">
+                High
+            </span>
+            <span data-testid="test-todo-status" id="status">Pending</span>
+        </div>
+        <time data-testid="test-todo-due-date"="2026-04-16T18:00:00Z">
+            Due Apr 16, 2026
+        </time>
+        <div data-testid="test-todo-time-remaining" id="time-remaining" aria-live="polite"></div>
+        <ul data-testid="test-todo-tags" class="tags">
+            <li data-testid="test-todo-work">Work</li>
+            <li data-testid="test-todo-urgent">Urgent</li>
+            <li>Design</li>
+        </ul>
+        <div class="checkbox-container">
+            <input type="checkbox" id="complete-toggle" data-testid="test-todo-complete-toggle" />
+            <label for="complete-toggle">Mark as complete</label>
+        </div>
+        <div class="actions">
+            <button data-testid="test-todo-edit-button">Edit</button>
+            <button data-testid="test-todo-delete-button">Delete</button>
+        </div>
+    </article>
+<script src="script.js"></script>
+</body>
+</html>

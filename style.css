@@ -1,0 +1,88 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+}
+
+article[data-testid="test-todo-card"] {
+  background: white;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border: 1px solid #ddd;
+}
+
+.priority.high {
+  color: white;
+  background: #d93025;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 0.85rem;
+  color: #5f6368;
+  margin: 12px 0;
+}
+
+#status {
+  margin-left: auto;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.tags li {
+  background: #e8eaed;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.checkbox-container {
+  margin: 20px 0 10px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+  article[data-testid="test-todo-card"] {
+    max-width: none;
+    margin: 10px;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+  }
+}
