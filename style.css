@@ -20,13 +20,18 @@ body { font-family: system-ui, sans-serif; background: #f8fafc; padding: 1rem; }
 
 .priority-indicator {
     position: absolute;
-    left: 0; top: 0; bottom: 0; width: 5px;
+    left: 0; 
+    top: 0; 
+    bottom: 0; 
+    width: 8px;
     border-radius: 8px 0 0 8px;
+    transition: background-color 0.3s ease;
 }
 
-.high-priority .priority-indicator { background: var(--high); }
-.medium-priority .priority-indicator { background: var(--medium); }
-.low-priority .priority-indicator { background: var(--low); }
+.priority-low { background-color: #10b981; } 
+.priority-medium { background-color: #f59e0b; } 
+.priority-high { background-color: #ef4444; }
+.todo-card.priority-high { background-color: #fffafa; }
 
 .header-main { display: flex; justify-content: space-between; align-items: flex-start; }
 .title-section { display: flex; gap: 0.75rem; align-items: center; }
