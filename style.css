@@ -1,88 +1,51 @@
-body {
-  font-family: system-ui, sans-serif;
-  background: #f0f2f5;
-  margin: 0;
-  padding: 20px;
+:root {
+    --high: #ef4444;
+    --medium: #f59e0b;
+    --low: #10b981;
+    --border: #e2e8f0;
 }
 
-article[data-testid="test-todo-card"] {
-  background: white;
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  border: 1px solid #ddd;
+body { font-family: system-ui, sans-serif; background: #f8fafc; padding: 1rem; }
+
+.todo-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    max-width: 450px;
+    margin: auto;
+    position: relative;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.priority.high {
-  color: white;
-  background: #d93025;
-  padding: 2px 10px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  border-radius: 4px;
+.priority-indicator {
+    position: absolute;
+    left: 0; top: 0; bottom: 0; width: 5px;
+    border-radius: 8px 0 0 8px;
 }
 
-.meta {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 0.85rem;
-  color: #5f6368;
-  margin: 12px 0;
-}
+.high-priority .priority-indicator { background: var(--high); }
+.medium-priority .priority-indicator { background: var(--medium); }
+.low-priority .priority-indicator { background: var(--low); }
 
-#status {
-  margin-left: auto;
-}
+.header-main { display: flex; justify-content: space-between; align-items: flex-start; }
+.title-section { display: flex; gap: 0.75rem; align-items: center; }
+.status-bar { margin: 0.75rem 0; display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; }
 
-.tags {
-  display: flex;
-  gap: 8px;
-  padding: 0;
-  list-style: none;
-  flex-wrap: wrap;
-}
+.status-done h2 { text-decoration: line-through; color: #94a3b8; }
+.overdue-active { border-color: var(--high); }
+#overdue-badge { background: var(--high); color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; }
 
-.tags li {
-  background: #e8eaed;
-  padding: 2px 10px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-}
+.hidden { display: none !important; }
+.collapsed { display: none; }
 
-.checkbox-container {
-  margin: 20px 0 10px 0;
-}
+.tags { list-style: none; padding: 0; display: flex; gap: 0.5rem; margin: 1rem 0; }
+.tags li { background: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
 
-.actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid #eee;
-}
+.actions { display: flex; gap: 0.5rem; border-top: 1px solid #f1f5f9; padding-top: 1rem; }
+.form-group { margin-bottom: 1rem; display: flex; flex-direction: column; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-button {
-  cursor: pointer;
-  border: 1px solid #ccc;
-  background: white;
-  padding: 6px 12px;
-  border-radius: 4px;
-}
-
-@media (max-width: 480px) {
-  article[data-testid="test-todo-card"] {
-    max-width: none;
-    margin: 10px;
-  }
-  
-  .actions {
-    flex-direction: column;
-  }
-  
-  button {
-    width: 100%;
-  }
+@media (max-width: 400px) {
+    .form-row { grid-template-columns: 1fr; }
 }
